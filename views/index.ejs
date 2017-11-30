@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div id="content">
+    <% include partials/header.ejs %>
+    <div>
 
-  <% include partials/header.ejs%>
 
-    <h1>Rocket League Stats</h1>
-    <p>Rocket League is a competitive E-Sport. Check out the who is on top of the leader boards here!</p>
-  </body>
+        <div class="jumbotron"><p>
+            <h1>Rocket League Stats</h1>
+            <p>Rocket League is a competitive E-Sport. Check out the who is on top of the leader boards here!</p>
+            </p></div>
+    </div>
+
+
+</body>
 </html>
+
+
