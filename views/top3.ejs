@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
 
-  </head>
-  <body>
+</head>
+<body>
+<header></header>
+<% include partials/sidebar.ejs %>
 
-  <% include partials/header.ejs%>
+<h1>Rocket League Stats Leaderboards</h1>
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Username</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td><%= leader[0] %></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">2</th>
+        <td><%= leader[1] %></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">3</th>
+        <td><%= leader[2] %></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
 
-    <h1><%= title %></h1>
-    <h1>Top 3 Rocket League Players</h1>
-    <p><%= leader[0] %></p>
-    <p> <%= leader[1]%> </p>
-    <p> <%= leader[2]%> </p>
-  </body>
+
+</body>
 </html>
