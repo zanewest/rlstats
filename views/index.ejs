@@ -24,15 +24,9 @@
     <img src="filler.jpg" class="img-fluid banner" alt="Responsive image">
 </div>
 
-<h1 class="text-center">Rocket League Ranked Leaderboard</h1>
-
+<h1 class="text-center">Rocket League Stats</h1>
 
 <div class="container mainbodycontent">
-
-
-
-
-
 
 <p class="text-center">Rocket League is a competitive E-Sport.</p>
         </div>
@@ -46,6 +40,7 @@
 
     <script>
         function getLeaderboard() {
+            $(".limitbanner").remove();
             $(".mainbodycontent").empty();
             $(".mainbodycontent").append("<!-- nav tabs -->\n" +
                 "    <ul class=\"nav nav-tabs\">\n" +
