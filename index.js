@@ -91,7 +91,7 @@ function getleader3v3ss(){
 
 
 setTimeout(getleader3v3, 1100);
-getleader3v3ss();
+setTimeout(getleader3v3ss, 1100);
 
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
