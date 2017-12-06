@@ -21,9 +21,6 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-
-
-
 //leaderboard page
 
 var rls = require('rls-api');
@@ -61,6 +58,8 @@ client.getRankedLeaderboard(rls.rankedPlaylists.DOUBLES, function(status, data){
     }
 });
 
+
+//get 3v3 leaderboard
 var leader3v3 = [];
 function getleader3v3(){
     client.getRankedLeaderboard(rls.rankedPlaylists.STANDARD, function(status, data){
@@ -75,21 +74,36 @@ function getleader3v3(){
 });
 }
 
-setTimeout(getleader3v3, 2000);
+//get 3v3 solo standard leaderboard
+var leader3v3ss = [];
+function getleader3v3ss(){
+    client.getRankedLeaderboard(rls.rankedPlaylists.SOLO_STANDARD, function(status, data){
+        if(status === 200){
+            //test
+            for(var i = 0; i < data.length; i++){
+                leader3v3ss[i] = data[i].displayName;
+            }
+        } else {
+            console.log("-- getRankedLeaderboard failed: " + status);
+        }
+    });
+}
+
+
+setTimeout(getleader3v3, 1100);
+getleader3v3ss();
 
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
-    leader2v2: leader2v2})
+    leader2v2: leader2v2,
+    leader3v3: leader3v3,
+    leader3v3ss: leader3v3ss})
 });
 
 app.get('/getTop3', function(request, response) {
     response.render('top3', { title: 'Rocket League Top 3',
     leader: leader})
 });
-
-
-
-
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));

@@ -20,74 +20,21 @@
 </header>
 <% include partials/sidebar.ejs %>
 
-<h1>Rocket League Ranked Leaderboard</h1>
+<div class="container-fluid no-padding limitbanner">
+    <img src="filler.jpg" class="img-fluid banner" alt="Responsive image">
+</div>
+
+<h1 class="text-center">Rocket League Ranked Leaderboard</h1>
 
 
-<div class="container">
+<div class="container mainbodycontent">
 
-<!-- nav tabs -->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a data-toggle="tab" class="nav-link active" href="#1v1">1 v 1</a>
-        </li>
-        <li class="nav-item">
-            <a  data-toggle="tab" class="nav-link" href="#2v2">2 v 2</a>
-        </li>
-        <li class="nav-item">
-            <a data-toggle="tab" class="nav-link" href="#menu3">Standard</a>
-        </li>
-        <li class="nav-item">
-            <a data-toggle="tab" class="nav-link" href="#menu4">Solo Standard</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div id="1v1" class="tab-pane show fade in active">
-            <table class="table table-striped table-dark table-condensed table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% for (i = 0; i < 10; i++) { %>
-                <thead>
-                <tr>
-                    <th scope="row"><%= i + 1 %></th>
-                    <td><%= leader[i] %></td>
-                </tr>
-                </thead>
-                <% } %>
-                </tbody>
-            </table>
-        </div>
-        <div id="2v2" class="tab-pane fade">
-            <table class="table table-striped table-dark table-condensed table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Username</th>
-                </tr>
-                </thead>
-                <tbody>
-                <% for (i = 0; i < 10; i++) { %>
-                <thead>
-                <tr>
-                    <th scope="row"><%= i + 1 %></th>
-                    <td><%= leader2v2[i] %></td>
-                </tr>
-                </thead>
-                <% } %>
-                </tbody>
-            </table>
-        </div>
-        <div id="menu2" class="tab-pane fade">
-            <h3>Menu 2</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        </div>
-        <div id="menu3" class="tab-pane fade">
-            <h3>Menu 3</h3>
-            <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+
+
+
+
+<p class="text-center">Rocket League is a competitive E-Sport.</p>
         </div>
     </div>
 </div>
@@ -97,15 +44,108 @@
 </div>
 </div>
 
-<div class="changeme">
-    <p>This should change</p>
-    <button onclick="change()" class="button">Change</button>
     <script>
-        function change() {
-            $(".changeme").append($("<p>This is a change</p>"));
+        function getLeaderboard() {
+            $(".mainbodycontent").empty();
+            $(".mainbodycontent").append("<!-- nav tabs -->\n" +
+                "    <ul class=\"nav nav-tabs\">\n" +
+                "        <li class=\"nav-item\">\n" +
+                "            <a data-toggle=\"tab\" class=\"nav-link active\" href=\"#1v1\">1 v 1</a>\n" +
+                "        </li>\n" +
+                "        <li class=\"nav-item\">\n" +
+                "            <a  data-toggle=\"tab\" class=\"nav-link\" href=\"#2v2\">2 v 2</a>\n" +
+                "        </li>\n" +
+                "        <li class=\"nav-item\">\n" +
+                "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3\">Standard</a>\n" +
+                "        </li>\n" +
+                "        <li class=\"nav-item\">\n" +
+                "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3ss\">Solo Standard</a>\n" +
+                "        </li>\n" +
+                "    </ul>\n" +
+                "    <div class=\"tab-content\">\n" +
+                "        <div id=\"1v1\" class=\"tab-pane show fade in active\">\n" +
+                "            <table class=\"table table-striped table-dark table-condensed table-hover\">\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"col\">#</th>\n" +
+                "                    <th scope=\"col\">Username</th>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <tbody>\n" +
+                "                <% for (i = 0; i < 10; i++) { %>\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+                "                    <td><%= leader[i] %></td>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <% } %>\n" +
+                "                </tbody>\n" +
+                "            </table>\n" +
+                "        </div>\n" +
+                "        <div id=\"2v2\" class=\"tab-pane fade\">\n" +
+                "            <table class=\"table table-striped table-dark table-hover\">\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"col\">#</th>\n" +
+                "                    <th scope=\"col\">Username</th>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <tbody>\n" +
+                "                <% for (i = 0; i < 10; i++) { %>\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+                "                    <td><%= leader2v2[i] %></td>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <% } %>\n" +
+                "                </tbody>\n" +
+                "            </table>\n" +
+                "        </div>\n" +
+                "        <div id=\"3v3\" class=\"tab-pane fade\">\n" +
+                "            <table class=\"table table-striped table-dark table-condensed table-hover\">\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"col\">#</th>\n" +
+                "                    <th scope=\"col\">Username</th>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <tbody>\n" +
+                "                <% for (i = 0; i < 10; i++) { %>\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+                "                    <td><%= leader3v3[i] %></td>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <% } %>\n" +
+                "                </tbody>\n" +
+                "            </table>\n" +
+                "        </div>\n" +
+                "        <div id=\"3v3ss\" class=\"tab-pane fade\">\n" +
+                "            <table class=\"table table-striped table-dark table-condensed table-hover\">\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"col\">#</th>\n" +
+                "                    <th scope=\"col\">Username</th>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <tbody>\n" +
+                "                <% for (i = 0; i < 10; i++) { %>\n" +
+                "                <thead>\n" +
+                "                <tr>\n" +
+                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+                "                    <td><%= leader3v3ss[i] %></td>\n" +
+                "                </tr>\n" +
+                "                </thead>\n" +
+                "                <% } %>\n" +
+                "                </tbody>\n" +
+                "            </table>")
         }
+
+
     </script>
-</div>
 
 </div>
 

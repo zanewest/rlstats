@@ -1,3 +1,45 @@
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: -15px;
+    border-right: -15px;
+}
+
+.limitbanner{
+    height: 400px;
+}
+
+.banner{
+    max-height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-tabs{
+    background-color: #2d3339;
+    border-color: #FFD87D;
+
+}
+.nav-tabs > li > a:hover{
+    background-color: #2d3339;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+.a{
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+.active {
+    background-color: #71808e !important;
+    color: white !important;
+    border-color: #2d3339 #2d3339 #FFD87D !important;
+}
 
 header {
     width: 100%;
