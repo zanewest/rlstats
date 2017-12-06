@@ -1,8 +1,12 @@
 //cd /home/marcus/node-js-getting-started/project2/
 //heroku local
 var express = require('express');
+var path = require('path');
 var app = express();
 var url = require('url');
+global.jQuery = require('jquery');
+//require('bootstrap');
+var $ = require('jquery');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -12,17 +16,80 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
+
+//leaderboard page
+
+var rls = require('rls-api');
+
+var client = new rls.Client({
+    token: "F1SOEASNP5N4AWCND7PPV1UW9ZWFXRMB"
+});
+
+
+
+//Get 1v1 leaderboard
+var leader = [];
+
+client.getRankedLeaderboard(rls.rankedPlaylists.DUEL, function(status, data){
+    if(status === 200){
+        //test
+        for(var i = 0; i < data.length; i++){
+            leader[i] = data[i].displayName;
+        }
+    } else {
+        console.log("-- getRankedLeaderboard failed: " + status);
+    }
+});
+
+//Get 2v2 leaderboard
+var leader2v2 = [];
+client.getRankedLeaderboard(rls.rankedPlaylists.DOUBLES, function(status, data){
+    if(status === 200){
+        //test
+        for(var i = 0; i < data.length; i++){
+            leader2v2[i] = data[i].displayName;
+        }
+    } else {
+        console.log("-- getRankedLeaderboard failed: " + status);
+    }
+});
+
+var leader3v3 = [];
+function getleader3v3(){
+    client.getRankedLeaderboard(rls.rankedPlaylists.STANDARD, function(status, data){
+        if(status === 200){
+            //test
+            for(var i = 0; i < data.length; i++){
+                leader3v3[i] = data[i].displayName;
+            }
+        } else {
+            console.log("-- getRankedLeaderboard failed: " + status);
+        }
+});
+}
+
+setTimeout(getleader3v3, 2000);
+
 app.get('/', function(request, response) {
-    response.render('index')
+    response.render('index', { leader: leader,
+    leader2v2: leader2v2})
 });
 
-app.get('/cool', function(request, response) {
-    response.send(cool());
+app.get('/getTop3', function(request, response) {
+    response.render('top3', { title: 'Rocket League Top 3',
+    leader: leader})
 });
 
-app.get('/mail', function(request, response) {
-    calculateRate(request, response);
-});
+
+
+
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
