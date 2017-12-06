@@ -34,34 +34,39 @@ var client = new rls.Client({
 //Get 1v1 leaderboard
 var leader = [];
 
-client.getRankedLeaderboard(rls.rankedPlaylists.DUEL, function(status, data){
-    if(status === 200){
-        //test
-        for(var i = 0; i < data.length; i++){
-            leader[i] = data[i].displayName;
+function getLeader1v1(){
+    client.getRankedLeaderboard(rls.rankedPlaylists.DUEL, function(status, data){
+        if(status === 200){
+            //test
+            for(var i = 0; i < data.length; i++){
+                leader[i] = data[i].displayName;
+            }
+        } else {
+            console.log("-- getRankedLeaderboard failed: " + status);
         }
-    } else {
-        console.log("-- getRankedLeaderboard failed: " + status);
-    }
-});
+    });
+}
 
 //Get 2v2 leaderboard
 var leader2v2 = [];
-client.getRankedLeaderboard(rls.rankedPlaylists.DOUBLES, function(status, data){
-    if(status === 200){
-        //test
-        for(var i = 0; i < data.length; i++){
-            leader2v2[i] = data[i].displayName;
-        }
-    } else {
-        console.log("-- getRankedLeaderboard failed: " + status);
-    }
-});
 
+function getLeader2v2(){
+    client.getRankedLeaderboard(rls.rankedPlaylists.DOUBLES, function(status, data){
+        if(status === 200){
+            //test
+            for(var i = 0; i < data.length; i++){
+                leader2v2[i] = data[i].displayName;
+            }
+        } else {
+            console.log("-- getRankedLeaderboard failed: " + status);
+        }
+    });
+}
 
 //get 3v3 leaderboard
 var leader3v3 = [];
-function getleader3v3(){
+
+function getLeader3v3(){
     client.getRankedLeaderboard(rls.rankedPlaylists.STANDARD, function(status, data){
         if(status === 200){
             //test
@@ -76,7 +81,7 @@ function getleader3v3(){
 
 //get 3v3 solo standard leaderboard
 var leader3v3ss = [];
-function getleader3v3ss(){
+function getLeader3v3ss(){
     client.getRankedLeaderboard(rls.rankedPlaylists.SOLO_STANDARD, function(status, data){
         if(status === 200){
             //test
@@ -89,9 +94,10 @@ function getleader3v3ss(){
     });
 }
 
-
-setTimeout(getleader3v3, 1100);
-setTimeout(getleader3v3ss, 1100);
+getLeader1v1();
+setTimeout(getLeader2v2, 1100);
+setTimeout(getLeader3v3, 1100);
+setTimeout(getLeader3v3ss, 1100);
 
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
