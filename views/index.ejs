@@ -30,62 +30,7 @@
 
 <p class="text-center">Rocket League is a competitive E-Sport.</p>
 
-    <!-- Playground -->
-    <div class="playlist">
-        <table class="table table-dark">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Playlist</th>
-                <th>PC</th>
-                <th>PS4</th>
-                <th>XB1</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Duel</td>
-                <td><%= population[0].population.players %></td>
-                <td><%= population[1].population.players %></td>
-                <td><%= population[2].population.players %></td>
-                <td><%= population[0].population.players +
-                    population[1].population.players +
-                    population[2].population.players %></td>
-            <tr>
-                <th scope="row">2</th>
-                <td>Doubles</td>
-                <td><%= population[3].population.players %></td>
-                <td><%= population[4].population.players %></td>
-                <td><%= population[5].population.players %></td>
-                <td><%= population[3].population.players +
-                    population[4].population.players +
-                    population[5].population.players %></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Standard</td>
-                <td><%= population[6].population.players %></td>
-                <td><%= population[7].population.players %></td>
-                <td><%= population[8].population.players %></td>
-                <td><%= population[6].population.players +
-                    population[7].population.players +
-                    population[8].population.players %></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Solo Standard</td>
-                <td><%= population[18].population.players %></td>
-                <td><%= population[19].population.players %></td>
-                <td><%= population[20].population.players %></td>
-                <td><%= population[18].population.players +
-                    population[19].population.players +
-                    population[20].population.players %></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+
 
 
 
@@ -211,7 +156,53 @@
             $(".mainbodycontent").empty();
             $(".siteHeader").empty();
             $(".siteHeader").append("<h1>Rocket League Leader Board </h1>");
-            $(".mainbodycontent").append("")
+            $(".mainbodycontent").append(" <div class=\"playlist\">\n" +
+                "        <table class=\"table table-dark\">\n" +
+                "            <thead>\n" +
+                "            <tr>\n" +
+                "                <th>#</th>\n" +
+                "                <th>Playlist</th>\n" +
+                "                <th>PC</th>\n" +
+                "                <th>PS4</th>\n" +
+                "                <th>XB1</th>\n" +
+                "                <th>Total</th>\n" +
+                "            </tr>\n" +
+                "            </thead>\n" +
+                "            <tbody>\n" +
+                "            <tr>\n" +
+                "                <th scope=\"row\">1</th>\n" +
+                "                <td>Duel</td>\n" +
+                "                <td><%= duelPop[0] %></td>\n" +
+                "                <td><%= duelPop[1] %></td>\n" +
+                "                <td><%= duelPop[2] %></td>\n" +
+                "                <td><%= duelPop[0] + duelPop[1] + duelPop [2] %></td>\n" +
+                "            <tr>\n" +
+                "                <th scope=\"row\">2</th>\n" +
+                "                <td>Doubles</td>\n" +
+                "                <td><%= doublesPop[0] %></td>\n" +
+                "                <td><%= doublesPop[1] %></td>\n" +
+                "                <td><%= doublesPop[2] %></td>\n" +
+                "                <td><%= doublesPop[0] + doublesPop[1] + doublesPop [2] %></td>\n" +
+                "            </tr>\n" +
+                "            <tr>\n" +
+                "                <th scope=\"row\">3</th>\n" +
+                "                <td>Standard</td>\n" +
+                "                <td><%= standardPop[0] %></td>\n" +
+                "                <td><%= standardPop[1] %></td>\n" +
+                "                <td><%= standardPop[2] %></td>\n" +
+                "                <td><%= standardPop[0] + standardPop[1] + standardPop [2] %></td>\n" +
+                "            </tr>\n" +
+                "            <tr>\n" +
+                "                <th scope=\"row\">2</th>\n" +
+                "                <td>Solo Standard</td>\n" +
+                "                <td><%= ssPop[0] %></td>\n" +
+                "                <td><%= ssPop[1] %></td>\n" +
+                "                <td><%= ssPop[2] %></td>\n" +
+                "                <td><%= ssPop[0] + ssPop[1] + ssPop [2] %></td>\n" +
+                "            </tr>\n" +
+                "            </tbody>\n" +
+                "        </table>\n" +
+                "    </div>\n")
         }
 
         //getPlayerLookup

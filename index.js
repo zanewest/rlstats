@@ -95,15 +95,39 @@ function getLeader3v3ss(){
 }
 
 //Get playlist data
-var population = [];
+var duelPop = [];
+var doublesPop = [];
+var standardPop = [];
+var ssPop = [];
 
 function getPlaylists(){
     client.getPlaylistsData(function(status, data){
+        var duelIndex = 0;
+        var doubleIndex = 0;
+        var standardIndex = 0;
+        var ssIndex = 0;
         if(status === 200){
             console.log("-- Playlists data:");
             console.log(data);
             for(var i = 0; i < data.length; i++){
-                population[i] = data[i]
+
+                if(data[i].name == 'Ranked Duel'){
+                    duelPop[duelIndex] = data[i].population.players;
+                    duelIndex++;
+                }
+                else if(data[i].name == 'Ranked Doubles'){
+                    doublesPop[doubleIndex] = data[i].population.players;
+                    doubleIndex++
+                }
+                if(data[i].name == 'Ranked Standard'){
+                    standardPop[standardIndex] = data[i].population.players;
+                    standardIndex++
+                }
+                if(data[i].name == 'Ranked Solo Standard'){
+                    ssPop[ssIndex] = data[i].population.players;
+                    ssIndex++
+                }
+
             }
         } else {
             console.log("-- getPlaylistsData failed: " + status);
@@ -122,7 +146,10 @@ app.get('/', function(request, response) {
     leader2v2: leader2v2,
     leader3v3: leader3v3,
     leader3v3ss: leader3v3ss,
-    population: population})
+    duelPop: duelPop,
+    doublesPop: doublesPop,
+    standardPop: standardPop,
+    ssPop: ssPop})
 });
 
 app.get('/getTop3', function(request, response) {
