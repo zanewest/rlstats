@@ -29,6 +29,70 @@
 <div class="container mainbodycontent">
 
 <p class="text-center">Rocket League is a competitive E-Sport.</p>
+
+    <!-- Playground -->
+    <div class="playlist">
+        <table class="table table-dark">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Playlist</th>
+                <th>PC</th>
+                <th>PS4</th>
+                <th>XB1</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Duel</td>
+                <td><%= population[0].population.players %></td>
+                <td><%= population[1].population.players %></td>
+                <td><%= population[2].population.players %></td>
+                <td><%= population[0].population.players +
+                    population[1].population.players +
+                    population[2].population.players %></td>
+            <tr>
+                <th scope="row">2</th>
+                <td>Doubles</td>
+                <td><%= population[3].population.players %></td>
+                <td><%= population[4].population.players %></td>
+                <td><%= population[5].population.players %></td>
+                <td><%= population[3].population.players +
+                    population[4].population.players +
+                    population[5].population.players %></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Standard</td>
+                <td><%= population[6].population.players %></td>
+                <td><%= population[7].population.players %></td>
+                <td><%= population[8].population.players %></td>
+                <td><%= population[6].population.players +
+                    population[7].population.players +
+                    population[8].population.players %></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Solo Standard</td>
+                <td><%= population[18].population.players %></td>
+                <td><%= population[19].population.players %></td>
+                <td><%= population[20].population.players %></td>
+                <td><%= population[18].population.players +
+                    population[19].population.players +
+                    population[20].population.players %></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+
         </div>
     </div>
 </div>
@@ -141,11 +205,20 @@
                 "            </table>")
         }
 
+        //getPlaylists
+        function getPlaylists() {
+            $(".limitbanner").remove();
+            $(".mainbodycontent").empty();
+            $(".siteHeader").empty();
+            $(".siteHeader").append("<h1>Rocket League Leader Board </h1>");
+            $(".mainbodycontent").append("")
+        }
+
         //getPlayerLookup
         function getPlayerLookup() {
             $(".limitbanner").remove();
             $(".siteHeader").empty();
-            $(".siteHeader").append("<h1>Rocket League Player Lookup");
+            $(".siteHeader").append("<h1>Rocket League Player Lookup</h>");
             $(".mainbodycontent").empty();
             $(".mainbodycontent").append("<p> test </p>");
         }

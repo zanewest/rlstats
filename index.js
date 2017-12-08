@@ -94,16 +94,35 @@ function getLeader3v3ss(){
     });
 }
 
+//Get playlist data
+var population = [];
+
+function getPlaylists(){
+    client.getPlaylistsData(function(status, data){
+        if(status === 200){
+            console.log("-- Playlists data:");
+            console.log(data);
+            for(var i = 0; i < data.length; i++){
+                population[i] = data[i]
+            }
+        } else {
+            console.log("-- getPlaylistsData failed: " + status);
+        }
+    });
+}
+
 getLeader1v1();
 setTimeout(getLeader2v2, 1100);
 setTimeout(getLeader3v3, 1100);
 setTimeout(getLeader3v3ss, 1100);
+setTimeout(getPlaylists, 1100);
 
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
     leader2v2: leader2v2,
     leader3v3: leader3v3,
-    leader3v3ss: leader3v3ss})
+    leader3v3ss: leader3v3ss,
+    population: population})
 });
 
 app.get('/getTop3', function(request, response) {
