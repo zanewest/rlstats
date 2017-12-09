@@ -4,7 +4,8 @@
     <title>Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -28,246 +29,253 @@
 
 <div class="container mainbodycontent">
 
-<p class="text-center">Rocket League is a competitive E-Sport.</p>
-
-
-<!-- Playground -->
-
-
-<!-- End Playground -->
-
-
-
-
-
-
-        </div>
+    <p class="text-center">Rocket League is a competitive E-Sport and popular video game.</p>
+    <p class="text-center container">Rocket League Stats offers the following services:</p>
+    <div class="text-center">
+        <ul class="list-group" style="text-align: left; display: inline-block; margin: auto;">
+            <li class="list-group-item">Leaderboards: Shows the current top 10 players worldwide of all four competitive
+                game modes.
+            </li>
+            <li class="list-group-item">Playlists: Shows the current player population of each game mode.</li>
+            <li class="list-group-item">Player Lookup: Facilitates the lookup of any player and provides stats and other
+                information.
+            </li>
+        </ul>
     </div>
+
+
+    <!-- Playground -->
+
+
+    <!-- End Playground -->
+
+
+</div>
+</div>
 </div>
 
 
-
 </div>
 </div>
 
-    <script>
-        function getLeaderboard() {
-            $(".limitbanner").remove();
-            $(".mainbodycontent").empty();
-            $(".siteHeader").empty();
-            $(".siteHeader").append("<h1>Rocket League Leader Board </h1>");
-            $(".mainbodycontent").append("<!-- nav tabs -->\n" +
-                "    <ul class=\"nav nav-tabs\">\n" +
-                "        <li class=\"nav-item\">\n" +
-                "            <a data-toggle=\"tab\" class=\"nav-link active\" href=\"#1v1\">1 v 1</a>\n" +
-                "        </li>\n" +
-                "        <li class=\"nav-item\">\n" +
-                "            <a  data-toggle=\"tab\" class=\"nav-link\" href=\"#2v2\">2 v 2</a>\n" +
-                "        </li>\n" +
-                "        <li class=\"nav-item\">\n" +
-                "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3\">Standard</a>\n" +
-                "        </li>\n" +
-                "        <li class=\"nav-item\">\n" +
-                "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3ss\">Solo Standard</a>\n" +
-                "        </li>\n" +
-                "    </ul>\n" +
-                "    <div class=\"tab-content\">\n" +
-                "        <div id=\"1v1\" class=\"tab-pane show fade in active\">\n" +
-                "            <table class=\"table table-striped table-dark table-hover\">\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"col\">#</th>\n" +
-                "                    <th scope=\"col\">Username</th>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <tbody>\n" +
-                "                <% for (i = 0; i < 10; i++) { %>\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
-                "                    <td><%= leader[i] %></td>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <% } %>\n" +
-                "                </tbody>\n" +
-                "            </table>\n" +
-                "        </div>\n" +
-                "        <div id=\"2v2\" class=\"tab-pane fade\">\n" +
-                "            <table class=\"table table-striped table-dark table-hover\">\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"col\">#</th>\n" +
-                "                    <th scope=\"col\">Username</th>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <tbody>\n" +
-                "                <% for (i = 0; i < 10; i++) { %>\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
-                "                    <td><%= leader2v2[i] %></td>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <% } %>\n" +
-                "                </tbody>\n" +
-                "            </table>\n" +
-                "        </div>\n" +
-                "        <div id=\"3v3\" class=\"tab-pane fade\">\n" +
-                "            <table class=\"table table-striped table-dark table-hover\">\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"col\">#</th>\n" +
-                "                    <th scope=\"col\">Username</th>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <tbody>\n" +
-                "                <% for (i = 0; i < 10; i++) { %>\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
-                "                    <td><%= leader3v3[i] %></td>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <% } %>\n" +
-                "                </tbody>\n" +
-                "            </table>\n" +
-                "        </div>\n" +
-                "        <div id=\"3v3ss\" class=\"tab-pane fade\">\n" +
-                "            <table class=\"table table-striped table-dark table-hover\">\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"col\">#</th>\n" +
-                "                    <th scope=\"col\">Username</th>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <tbody>\n" +
-                "                <% for (i = 0; i < 10; i++) { %>\n" +
-                "                <thead>\n" +
-                "                <tr>\n" +
-                "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
-                "                    <td><%= leader3v3ss[i] %></td>\n" +
-                "                </tr>\n" +
-                "                </thead>\n" +
-                "                <% } %>\n" +
-                "                </tbody>\n" +
-                "            </table>")
-        }
+<script>
+    function getLeaderboard() {
+        $(".limitbanner").remove();
+        $(".mainbodycontent").empty();
+        $(".siteHeader").empty();
+        $(".siteHeader").append("<h1>Rocket League Leader Board </h1>");
+        $(".mainbodycontent").append("<!-- nav tabs -->\n" +
+            "    <ul class=\"nav nav-tabs\">\n" +
+            "        <li class=\"nav-item\">\n" +
+            "            <a data-toggle=\"tab\" class=\"nav-link active\" href=\"#1v1\">1 v 1</a>\n" +
+            "        </li>\n" +
+            "        <li class=\"nav-item\">\n" +
+            "            <a  data-toggle=\"tab\" class=\"nav-link\" href=\"#2v2\">2 v 2</a>\n" +
+            "        </li>\n" +
+            "        <li class=\"nav-item\">\n" +
+            "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3\">Standard</a>\n" +
+            "        </li>\n" +
+            "        <li class=\"nav-item\">\n" +
+            "            <a data-toggle=\"tab\" class=\"nav-link\" href=\"#3v3ss\">Solo Standard</a>\n" +
+            "        </li>\n" +
+            "    </ul>\n" +
+            "    <div class=\"tab-content\">\n" +
+            "        <div id=\"1v1\" class=\"tab-pane show fade in active\">\n" +
+            "            <table class=\"table table-striped table-dark table-hover\">\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"col\">#</th>\n" +
+            "                    <th scope=\"col\">Username</th>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <tbody>\n" +
+            "                <% for (i = 0; i < 10; i++) { %>\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+            "                    <td><%= leader[i] %></td>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <% } %>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "        </div>\n" +
+            "        <div id=\"2v2\" class=\"tab-pane fade\">\n" +
+            "            <table class=\"table table-striped table-dark table-hover\">\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"col\">#</th>\n" +
+            "                    <th scope=\"col\">Username</th>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <tbody>\n" +
+            "                <% for (i = 0; i < 10; i++) { %>\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+            "                    <td><%= leader2v2[i] %></td>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <% } %>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "        </div>\n" +
+            "        <div id=\"3v3\" class=\"tab-pane fade\">\n" +
+            "            <table class=\"table table-striped table-dark table-hover\">\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"col\">#</th>\n" +
+            "                    <th scope=\"col\">Username</th>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <tbody>\n" +
+            "                <% for (i = 0; i < 10; i++) { %>\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+            "                    <td><%= leader3v3[i] %></td>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <% } %>\n" +
+            "                </tbody>\n" +
+            "            </table>\n" +
+            "        </div>\n" +
+            "        <div id=\"3v3ss\" class=\"tab-pane fade\">\n" +
+            "            <table class=\"table table-striped table-dark table-hover\">\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"col\">#</th>\n" +
+            "                    <th scope=\"col\">Username</th>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <tbody>\n" +
+            "                <% for (i = 0; i < 10; i++) { %>\n" +
+            "                <thead>\n" +
+            "                <tr>\n" +
+            "                    <th scope=\"row\"><%= i + 1 %></th>\n" +
+            "                    <td><%= leader3v3ss[i] %></td>\n" +
+            "                </tr>\n" +
+            "                </thead>\n" +
+            "                <% } %>\n" +
+            "                </tbody>\n" +
+            "            </table>")
+    }
 
-        //getPlaylists
-        function getPlaylists() {
-            $(".limitbanner").remove();
-            $(".mainbodycontent").empty();
-            $(".siteHeader").empty();
-            $(".siteHeader").append("<h1>Rocket League Leader Board </h1>");
-            $(".mainbodycontent").append(" <div class=\"playlist\">\n" +
-                "        <table class=\"table table-dark\">\n" +
-                "            <thead>\n" +
-                "            <tr>\n" +
-                "                <th>#</th>\n" +
-                "                <th>Playlist</th>\n" +
-                "                <th>PC</th>\n" +
-                "                <th>PS4</th>\n" +
-                "                <th>XB1</th>\n" +
-                "                <th>Total</th>\n" +
-                "            </tr>\n" +
-                "            </thead>\n" +
-                "            <tbody>\n" +
-                "            <tr>\n" +
-                "                <th scope=\"row\">1</th>\n" +
-                "                <td>Duel</td>\n" +
-                "                <td><%= duelPop[0] %></td>\n" +
-                "                <td><%= duelPop[1] %></td>\n" +
-                "                <td><%= duelPop[2] %></td>\n" +
-                "                <td><%= duelPop[0] + duelPop[1] + duelPop [2] %></td>\n" +
-                "            <tr>\n" +
-                "                <th scope=\"row\">2</th>\n" +
-                "                <td>Doubles</td>\n" +
-                "                <td><%= doublesPop[0] %></td>\n" +
-                "                <td><%= doublesPop[1] %></td>\n" +
-                "                <td><%= doublesPop[2] %></td>\n" +
-                "                <td><%= doublesPop[0] + doublesPop[1] + doublesPop [2] %></td>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th scope=\"row\">3</th>\n" +
-                "                <td>Standard</td>\n" +
-                "                <td><%= standardPop[0] %></td>\n" +
-                "                <td><%= standardPop[1] %></td>\n" +
-                "                <td><%= standardPop[2] %></td>\n" +
-                "                <td><%= standardPop[0] + standardPop[1] + standardPop [2] %></td>\n" +
-                "            </tr>\n" +
-                "            <tr>\n" +
-                "                <th scope=\"row\">2</th>\n" +
-                "                <td>Solo Standard</td>\n" +
-                "                <td><%= ssPop[0] %></td>\n" +
-                "                <td><%= ssPop[1] %></td>\n" +
-                "                <td><%= ssPop[2] %></td>\n" +
-                "                <td><%= ssPop[0] + ssPop[1] + ssPop [2] %></td>\n" +
-                "            </tr>\n" +
-                "            </tbody>\n" +
-                "        </table>\n" +
-                "    </div>\n")
-        }
+    //getPlaylists
+    function getPlaylists() {
+        $(".limitbanner").remove();
+        $(".mainbodycontent").empty();
+        $(".siteHeader").empty();
+        $(".siteHeader").append("<h1>Rocket League Playlists</h1>");
+        $(".mainbodycontent").append(" <div class=\"playlist\">\n" +
+            "        <table class=\"table table-dark\">\n" +
+            "            <thead>\n" +
+            "            <tr>\n" +
+            "                <th>#</th>\n" +
+            "                <th>Playlist</th>\n" +
+            "                <th>PC</th>\n" +
+            "                <th>PS4</th>\n" +
+            "                <th>XB1</th>\n" +
+            "                <th>Total</th>\n" +
+            "            </tr>\n" +
+            "            </thead>\n" +
+            "            <tbody>\n" +
+            "            <tr>\n" +
+            "                <th scope=\"row\">1</th>\n" +
+            "                <td>Duel</td>\n" +
+            "                <td><%= duelPop[0] %></td>\n" +
+            "                <td><%= duelPop[1] %></td>\n" +
+            "                <td><%= duelPop[2] %></td>\n" +
+            "                <td><%= duelPop[0] + duelPop[1] + duelPop [2] %></td>\n" +
+            "            <tr>\n" +
+            "                <th scope=\"row\">2</th>\n" +
+            "                <td>Doubles</td>\n" +
+            "                <td><%= doublesPop[0] %></td>\n" +
+            "                <td><%= doublesPop[1] %></td>\n" +
+            "                <td><%= doublesPop[2] %></td>\n" +
+            "                <td><%= doublesPop[0] + doublesPop[1] + doublesPop [2] %></td>\n" +
+            "            </tr>\n" +
+            "            <tr>\n" +
+            "                <th scope=\"row\">3</th>\n" +
+            "                <td>Standard</td>\n" +
+            "                <td><%= standardPop[0] %></td>\n" +
+            "                <td><%= standardPop[1] %></td>\n" +
+            "                <td><%= standardPop[2] %></td>\n" +
+            "                <td><%= standardPop[0] + standardPop[1] + standardPop [2] %></td>\n" +
+            "            </tr>\n" +
+            "            <tr>\n" +
+            "                <th scope=\"row\">2</th>\n" +
+            "                <td>Solo Standard</td>\n" +
+            "                <td><%= ssPop[0] %></td>\n" +
+            "                <td><%= ssPop[1] %></td>\n" +
+            "                <td><%= ssPop[2] %></td>\n" +
+            "                <td><%= ssPop[0] + ssPop[1] + ssPop [2] %></td>\n" +
+            "            </tr>\n" +
+            "            </tbody>\n" +
+            "        </table>\n" +
+            "    </div>\n")
+    }
 
-        //getPlayerLookup
-        function getPlayerLookup() {
-            $(".limitbanner").remove();
-            $(".siteHeader").empty();
-            $(".siteHeader").append("<h1>Rocket League Player Lookup</h>");
-            $(".mainbodycontent").empty();
-            $(".mainbodycontent").append("  <div class=\"row text-center profile-lookup_container\">\n" +
-                "        <div class=\"col-md-5\">\n" +
-                "            <h2 class=\"text-white\">Manual Lookup</h2>\n" +
-                "            <p class=\"text-white\">Fill in the correct information and we will do a lookup.</p>\n" +
-                "            <form action=\"/profile\" method=\"POST\">\n" +
-                "                <div class=\"form-group\">\n" +
-                "                    <label class=\"text-white\" for=\"platformInput\" id=\"platformInputLabel\">Platform</label>\n" +
-                "                    <select class=\"form-control\" id=\"platformInput\" name=\"platformId\" tabindex=\"0\">\n" +
-                "                        <option value=\"1\">Steam</option>\n" +
-                "                        <option value=\"2\">PS4</option>\n" +
-                "                        <option value=\"3\">XboxOne</option>\n" +
-                "                    </select>\n" +
-                "                </div>\n" +
-                "                <div class=\"form-group\">\n" +
-                "                    <label class=\"text-white\" for=\"queryInput\" id=\"queryInputLabel\">Steam profile</label>\n" +
-                "                    <input name=\"query\" type=\"text\" class=\"form-control\" id=\"queryInput\" placeholder=\"Steam Name or Gamer Tag\" tabindex=\"1\">\n" +
-                "                </div>\n" +
-                "                <div class=\"row\">\n" +
-                "                    <div class=\"col-md-8\"></div>\n" +
-                "                    <div class=\"col-md-4\">\n" +
-                "                        <button name=\"submit_lookup\" type=\"submit\" class=\"btn btn-info btn-block btn-lookup\" tabindex=\"2\">Lookup</button>\n" +
-                "                        <br>\n" +
-                "                    </div>\n" +
-                "                </div>\n" +
-                "            </form>\n" +
-                "        </div>\n" +
-                "        <div class=\"col-md-7\">\n" +
-                "            <br>\n" +
-                "            <br>\n" +
-                "            <br>\n" +
-                "            <br>\n" +
-                "            <br>\n" +
-                "            <h2 class=\"align-middle\">Authenticate</h2>\n" +
-                "            <p class=\"text-white\">We will redirect you to the correct profile page.</p>\n" +
-                "        </div>\n" +
-                "    </div>\n");
-        }
-
-
+    //getPlayerLookup
+    function getPlayerLookup() {
+        $(".limitbanner").remove();
+        $(".siteHeader").empty();
+        $(".siteHeader").append("<h1>Rocket League Player Lookup</h>");
+        $(".mainbodycontent").empty();
+        $(".mainbodycontent").append("  <div class=\"row text-center profile-lookup_container\">\n" +
+            "        <div class=\"col-md-5\">\n" +
+            "            <h2 class=\"text-white\">Manual Lookup</h2>\n" +
+            "            <p class=\"text-white\">Fill in the correct information and we will do a lookup.</p>\n" +
+            "            <form action=\"/profile\" method=\"POST\">\n" +
+            "                <div class=\"form-group\">\n" +
+            "                    <label class=\"text-white\" for=\"platformInput\" id=\"platformInputLabel\">Platform</label>\n" +
+            "                    <select class=\"form-control\" id=\"platformInput\" name=\"platformId\" tabindex=\"0\">\n" +
+            "                        <option value=\"1\">Steam</option>\n" +
+            "                        <option value=\"2\">PS4</option>\n" +
+            "                        <option value=\"3\">XboxOne</option>\n" +
+            "                    </select>\n" +
+            "                </div>\n" +
+            "                <div class=\"form-group\">\n" +
+            "                    <label class=\"text-white\" for=\"queryInput\" id=\"queryInputLabel\">Steam profile</label>\n" +
+            "                    <input name=\"query\" type=\"text\" class=\"form-control\" id=\"queryInput\" placeholder=\"Steam Name or Gamer Tag\" tabindex=\"1\">\n" +
+            "                </div>\n" +
+            "                <div class=\"row\">\n" +
+            "                    <div class=\"col-md-8\"></div>\n" +
+            "                    <div class=\"col-md-4\">\n" +
+            "                        <button name=\"submit_lookup\" type=\"submit\" class=\"btn btn-info btn-block btn-lookup\" tabindex=\"2\">Lookup</button>\n" +
+            "                        <br>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "            </form>\n" +
+            "        </div>\n" +
+            "        <div class=\"col-md-7\">\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <br>\n" +
+            "            <h2 class=\"align-middle\">Authenticate</h2>\n" +
+            "            <p class=\"text-white\">We will redirect you to the correct profile page.</p>\n" +
+            "        </div>\n" +
+            "    </div>\n");
+    }
 
 
-
-
-    </script>
+</script>
 
 </div>
 
 <% include partials/footer.ejs %>
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
 
 
 </body>

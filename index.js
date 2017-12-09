@@ -153,27 +153,20 @@ app.get('/', function(request, response) {
 });
 
 app.post('/profile', function(request, response) {
-    console.log("test");
-    console.log(request.body.platformId)
-    console.log(request.body.query)
 
     var playerName;
     var playersGoals;
+    var player;
 
     client.getPlayer(request.body.query, request.body.platformId, function(status, data){
         if(status === 200){
-            var playerName = data.displayName;
-            var playerGoals = data.stats.goals;
-
-            console.log("-- Player Data:");
-            console.log("   Display name: " + data.displayName);
-            console.log("   Goals: " + data.stats.goals);
+            var player = data;
         } else {
             console.log("-- getPlayer failed: " + status);
         }
 
         response.render('playerPage', {playerName: playerName,
-                                        playerGoals: playerGoals});
+                                        player: player});
     });
 
 });
