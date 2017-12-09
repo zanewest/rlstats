@@ -137,9 +137,9 @@ function getPlaylists(){
 
 getLeader1v1();
 setTimeout(getLeader2v2, 1100);
-setTimeout(getLeader3v3, 1100);
-setTimeout(getLeader3v3ss, 1100);
-setTimeout(getPlaylists, 1100);
+setTimeout(getLeader3v3, 2100);
+setTimeout(getLeader3v3ss, 3100);
+setTimeout(getPlaylists, 4100);
 
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
