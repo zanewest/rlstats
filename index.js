@@ -133,6 +133,7 @@ setTimeout(getLeader3v3, 2100);
 setTimeout(getLeader3v3ss, 3100);
 setTimeout(getPlaylists, 4100);
 
+var errmsg = "";
 app.get('/', function(request, response) {
     response.render('index', { leader: leader,
     leader2v2: leader2v2,
@@ -141,7 +142,8 @@ app.get('/', function(request, response) {
     duelPop: duelPop,
     doublesPop: doublesPop,
     standardPop: standardPop,
-    ssPop: ssPop})
+    ssPop: ssPop,
+    errmsg: errmsg})
 });
 
 app.post('/profile', function(request, response) {
@@ -149,15 +151,28 @@ app.post('/profile', function(request, response) {
     var playersGoals;
     var player;
 
+
+
     client.getPlayer(request.body.query, request.body.platformId, function(status, data){
         if(status === 200){
             var player = data;
+            response.render('playerPage', {playerName: playerName,
+                player: player});
         } else {
             console.log("-- getPlayer failed: " + status);
+            var errmsg = "We couldn't find a player by that name.";
+            response.render('index', { leader: leader,
+                leader2v2: leader2v2,
+                leader3v3: leader3v3,
+                leader3v3ss: leader3v3ss,
+                duelPop: duelPop,
+                doublesPop: doublesPop,
+                standardPop: standardPop,
+                ssPop: ssPop,
+                errmsg: errmsg})
         }
 
-        response.render('playerPage', {playerName: playerName,
-                                        player: player});
+
     });
 
 });

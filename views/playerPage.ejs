@@ -14,7 +14,6 @@
 </head>
 <body>
 <header></header>
-<% include partials/sidebar.ejs %>
 
 <div class="playlist container mainbodycontent">
     <h1>Rocket League Player</h1>
@@ -46,9 +45,11 @@
     </table>
     <div class="text-center">
         <img src=<%= player.signatureUrl %> alt="..." class="img-thumbnail">
+        <br>
+        <br>
+
+        <a href="/" class="btn btn-info">Go Back</a>
     </div>
-<br>
-    <button type="button" class="btn btn-primary btn-block" onclick="history.back()">Go Back</button>
 </div>
 
 <% include partials/footer.ejs %>
