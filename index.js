@@ -6,7 +6,6 @@ var app = express();
 var url = require('url');
 var bodyParser = require('body-parser')
 global.jQuery = require('jquery');
-//require('bootstrap');
 var $ = require('jquery');
 
 app.set('port', (process.env.PORT || 5000));
@@ -17,21 +16,14 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(bodyParser.urlencoded({ extended: false }))
 
-//leaderboard page
-
+//initialize api
 var rls = require('rls-api');
-
 var client = new rls.Client({
     token: "F1SOEASNP5N4AWCND7PPV1UW9ZWFXRMB"
 });
-
-
 
 //Get 1v1 leaderboard
 var leader = [];
@@ -153,7 +145,6 @@ app.get('/', function(request, response) {
 });
 
 app.post('/profile', function(request, response) {
-
     var playerName;
     var playersGoals;
     var player;
@@ -171,15 +162,11 @@ app.post('/profile', function(request, response) {
 
 });
 
-app.get('/getTop3', function(request, response) {
-    response.render('top3', { title: 'Rocket League Top 3',
-    leader: leader})
-});
-
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
 
+/* This is Reference Code
 function calculateRate(request, response) {
     var requestUrl = url.parse(request.url, true);
 
@@ -249,3 +236,4 @@ function calculateRate(request, response) {
 
     response.render('pages/result', params);
 }
+*/
