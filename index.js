@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var app = express();
 var url = require('url');
+var bodyParser = require('body-parser')
 global.jQuery = require('jquery');
 //require('bootstrap');
 var $ = require('jquery');
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(bodyParser.urlencoded({ extended: false }))
 
 //leaderboard page
 
@@ -107,8 +109,6 @@ function getPlaylists(){
         var standardIndex = 0;
         var ssIndex = 0;
         if(status === 200){
-            console.log("-- Playlists data:");
-            console.log(data);
             for(var i = 0; i < data.length; i++){
 
                 if(data[i].name == 'Ranked Duel'){
@@ -150,6 +150,32 @@ app.get('/', function(request, response) {
     doublesPop: doublesPop,
     standardPop: standardPop,
     ssPop: ssPop})
+});
+
+app.post('/profile', function(request, response) {
+    console.log("test");
+    console.log(request.body.platformId)
+    console.log(request.body.query)
+
+    var playerName;
+    var playersGoals;
+
+    client.getPlayer(request.body.query, request.body.platformId, function(status, data){
+        if(status === 200){
+            var playerName = data.displayName;
+            var playerGoals = data.stats.goals;
+
+            console.log("-- Player Data:");
+            console.log("   Display name: " + data.displayName);
+            console.log("   Goals: " + data.stats.goals);
+        } else {
+            console.log("-- getPlayer failed: " + status);
+        }
+
+        response.render('playerPage', {playerName: playerName,
+                                        playerGoals: playerGoals});
+    });
+
 });
 
 app.get('/getTop3', function(request, response) {

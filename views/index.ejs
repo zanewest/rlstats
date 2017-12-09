@@ -31,7 +31,10 @@
 <p class="text-center">Rocket League is a competitive E-Sport.</p>
 
 
+<!-- Playground -->
 
+
+<!-- End Playground -->
 
 
 
@@ -211,7 +214,42 @@
             $(".siteHeader").empty();
             $(".siteHeader").append("<h1>Rocket League Player Lookup</h>");
             $(".mainbodycontent").empty();
-            $(".mainbodycontent").append("<p> test </p>");
+            $(".mainbodycontent").append("  <div class=\"row text-center profile-lookup_container\">\n" +
+                "        <div class=\"col-md-5\">\n" +
+                "            <h2 class=\"text-white\">Manual Lookup</h2>\n" +
+                "            <p class=\"text-white\">Fill in the correct information and we will do a lookup.</p>\n" +
+                "            <form action=\"/profile\" method=\"POST\">\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label class=\"text-white\" for=\"platformInput\" id=\"platformInputLabel\">Platform</label>\n" +
+                "                    <select class=\"form-control\" id=\"platformInput\" name=\"platformId\" tabindex=\"0\">\n" +
+                "                        <option value=\"1\">Steam</option>\n" +
+                "                        <option value=\"2\">PS4</option>\n" +
+                "                        <option value=\"3\">XboxOne</option>\n" +
+                "                    </select>\n" +
+                "                </div>\n" +
+                "                <div class=\"form-group\">\n" +
+                "                    <label class=\"text-white\" for=\"queryInput\" id=\"queryInputLabel\">Steam profile</label>\n" +
+                "                    <input name=\"query\" type=\"text\" class=\"form-control\" id=\"queryInput\" placeholder=\"Steam Name or Gamer Tag\" tabindex=\"1\">\n" +
+                "                </div>\n" +
+                "                <div class=\"row\">\n" +
+                "                    <div class=\"col-md-8\"></div>\n" +
+                "                    <div class=\"col-md-4\">\n" +
+                "                        <button name=\"submit_lookup\" type=\"submit\" class=\"btn btn-info btn-block btn-lookup\" tabindex=\"2\">Lookup</button>\n" +
+                "                        <br>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </form>\n" +
+                "        </div>\n" +
+                "        <div class=\"col-md-7\">\n" +
+                "            <br>\n" +
+                "            <br>\n" +
+                "            <br>\n" +
+                "            <br>\n" +
+                "            <br>\n" +
+                "            <h2 class=\"align-middle\">Authenticate</h2>\n" +
+                "            <p class=\"text-white\">We will redirect you to the correct profile page.</p>\n" +
+                "        </div>\n" +
+                "    </div>\n");
         }
 
 
